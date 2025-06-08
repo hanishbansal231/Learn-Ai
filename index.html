@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimized DSA Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- highlight.js for Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <header class="app-header">
+            <h1><i class="fa-solid fa-brain"></i> DSA Instructor Bot</h1>
+            <p>Your personal AI tutor for Data Structures & Algorithms.</p>
+        </header>
+        
+        <div class="input-area">
+            <textarea id="userInput" placeholder="e.g., Explain Big O notation..."></textarea>
+            <button id="submitBtn">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Ask Professor</span>
+            </button>
+        </div>
+
+        <div class="response-container">
+            <div class="response-header">
+                <h3><i class="fa-solid fa-robot"></i> Bot Response</h3>
+            </div>
+            <div id="response-content-area">
+                <!-- Loader and dynamic content will be injected here -->
+                <div id="loader" class="loader" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="dsa.js"></script>
+</body>
+</html>

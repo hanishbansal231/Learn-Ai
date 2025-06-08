@@ -1,0 +1,65 @@
+/* --- All styles from the "Professional UI" version are used here --- */
+/* --- The only difference is we add styles for Markdown and Code Blocks --- */
+
+:root {
+    --bg-color: #1a1a2e;
+    --primary-glass: rgba(22, 22, 40, 0.6);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0b0;
+    --accent-color: #fca311;
+    --accent-hover: #ffb74d;
+    --font-primary: 'Poppins', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+    --border-radius: 12px;
+}
+/* ... (Keep all the general styles like body, main-container, header, input-area, etc. from the "Professional UI" answer) ... */
+
+body { background-color: var(--bg-color); background-image: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: var(--text-primary); font-family: var(--font-primary); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 2rem; box-sizing: border-box; }
+.main-container { width: 100%; max-width: 800px; background: var(--primary-glass); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 2.5rem; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
+.app-header { text-align: center; margin-bottom: 2rem; }
+.app-header h1 { font-size: 2.2rem; font-weight: 700; color: #fff; }
+.app-header h1 i { color: var(--accent-color); margin-right: 0.5rem; }
+.app-header p { color: var(--text-secondary); font-size: 1rem; }
+.input-area { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+textarea { width: 100%; min-height: 120px; padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); background-color: rgba(0, 0, 0, 0.2); color: var(--text-primary); font-family: var(--font-mono); font-size: 1rem; resize: vertical; transition: border-color 0.3s, box-shadow 0.3s; }
+textarea:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 3px rgba(252, 163, 17, 0.3); }
+#submitBtn { display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 0.8rem 1.5rem; border: none; border-radius: 8px; background-color: var(--accent-color); color: #111; font-weight: 600; font-family: var(--font-primary); font-size: 1.1rem; cursor: pointer; transition: background-color 0.3s ease, transform 0.1s ease; }
+#submitBtn:hover { background-color: var(--accent-hover); }
+#submitBtn:active { transform: scale(0.98); }
+#submitBtn:disabled { background-color: #555; cursor: not-allowed; }
+.response-container { margin-top: 1.5rem; }
+.response-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); }
+.response-header h3 { font-weight: 600; color: #fff; }
+.response-header i { margin-right: 0.5rem; color: var(--accent-color); }
+.loader { border: 4px solid rgba(255, 255, 255, 0.2); border-top: 4px solid var(--accent-color); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 2rem auto; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* --- OPTIMIZED RESPONSE AREA STYLES --- */
+#response-content-area {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    min-height: 150px;
+    padding: 1.5rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+/* Markdown Element Styling */
+#response-content-area p { margin-bottom: 1rem; font-family: var(--font-primary); }
+#response-content-area p:last-child { margin-bottom: 0; }
+#response-content-area ul, #response-content-area ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+#response-content-area strong { font-weight: 600; color: #fff; }
+#response-content-area em { font-style: italic; color: var(--text-secondary); }
+#response-content-area a { color: var(--accent-hover); text-decoration: none; }
+#response-content-area a:hover { text-decoration: underline; }
+
+/* Code Block Styling (copied from chat system) */
+.code-block-container { background-color: #282c34; border-radius: 8px; margin: 1.5rem 0; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); }
+.code-block-header { display: flex; justify-content: space-between; align-items: center; background-color: rgba(0, 0, 0, 0.3); padding: 0.5rem 1rem; color: var(--text-secondary); font-family: var(--font-mono); font-size: 0.85rem; }
+.code-block-header .language { text-transform: uppercase; font-weight: 600; }
+.copy-code-btn { display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; color: var(--text-secondary); padding: 0.3rem 0.6rem; border-radius: 5px; cursor: pointer; transition: background 0.2s, color 0.2s; }
+.copy-code-btn:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+.code-block-container pre { margin: 0; }
+.code-block-container code.hljs { padding: 1rem; background: transparent; }
