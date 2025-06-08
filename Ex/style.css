@@ -76,27 +76,21 @@ body {
 /*    CUSTOM SCROLLBAR FOR CHAT HISTORY    */
 /* ======================================= */
 
-/* This targets the scrollbar of the chat history container */
 #chat-history::-webkit-scrollbar {
-    width: 8px; /* Sets the width of the scrollbar */
+    width: 8px;
 }
-
-/* This targets the track (the "trench" the scrollbar moves in) */
 #chat-history::-webkit-scrollbar-track {
-    background: transparent; /* Makes the track invisible, blending with the background */
+    background: transparent;
 }
-
-/* This targets the draggable handle (the "thumb") */
 #chat-history::-webkit-scrollbar-thumb {
-    background-color: var(--bot-bubble-bg); /* A semi-transparent dark color for the handle */
-    border-radius: 10px; /* Makes the handle have fully rounded corners (pill shape) */
-    border: 2px solid var(--chat-bg); /* Creates a padding effect around the thumb */
+    background-color: var(--bot-bubble-bg);
+    border-radius: 10px;
+    border: 2px solid var(--chat-bg);
+}
+#chat-history::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* This changes the handle's color when you hover over it */
-#chat-history::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.4); /* Makes the handle slightly darker on hover */
-}
 .message-bubble {
     display: flex;
     flex-direction: row;
@@ -172,8 +166,91 @@ body {
 #submitBtn:hover { background-color: #d66a69; }
 #submitBtn:disabled { background-color: #ccc; cursor: not-allowed; }
 
-/* Mobile Responsiveness */
+
+/* ================================= */
+/*         RESPONSIVE DESIGN         */
+/* ================================= */
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    #chat-container {
+        max-width: 600px;
+    }
+}
+
+/* Mobile Portrait - Enhanced from original */
 @media (max-width: 500px) {
-    #chat-container { height: 100vh; max-height: 100vh; border-radius: 0; }
-    #chat-input-area, #app-header, #chat-history { padding-left: 1rem; padding-right: 1rem; }
+    body {
+        align-items: flex-start; /* Align chat to top on mobile */
+    }
+    #chat-container {
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+    }
+    #app-header, #chat-input-area, #chat-history {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    #app-header {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+    .avatar {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+    .chat-info h1 {
+        font-size: 1.15rem;
+    }
+    .message-bubble {
+        max-width: 90%; /* Allow bubbles to be a bit wider */
+    }
+}
+
+/* Mobile Landscape - Critical for usability on short viewports */
+@media (max-height: 450px) and (orientation: landscape) {
+    #chat-container {
+        height: 100vh;
+        max-height: 100vh;
+    }
+    #app-header {
+        padding: 0.5rem 1rem;
+    }
+    .avatar {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+        margin-right: 0.75rem;
+    }
+    .chat-info h1 {
+        font-size: 1rem;
+    }
+    .chat-info p {
+        font-size: 0.8rem;
+    }
+    #chat-history {
+        padding: 0.75rem 1rem;
+        gap: 0.75rem;
+    }
+    .message-content {
+        padding: 0.6rem 1rem;
+    }
+    #chat-input-area {
+        padding: 0.5rem 1rem;
+    }
+    .input-wrapper {
+        padding: 0.3rem;
+    }
+    #userInput {
+        padding: 0.4rem;
+        max-height: 80px; /* Reduce max height of textarea */
+    }
+    #submitBtn {
+        width: 40px;
+        height: 40px;
+    }
 }
