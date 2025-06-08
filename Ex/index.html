@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Anjali</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="chat-container">
+        <header id="app-header">
+            <div class="avatar">A</div>
+            <div class="chat-info">
+                <h1>Anjali ❤️</h1>
+                <p id="status">online</p>
+            </div>
+        </header>
+
+        <main id="chat-history">
+            <!-- Chat messages will be dynamically added here -->
+        </main>
+
+        <footer id="chat-input-area">
+            <div class="input-wrapper">
+                <textarea id="userInput" placeholder="Message Anjali..." rows="1"></textarea>
+                <button id="submitBtn" title="Send Message">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
